@@ -1,0 +1,45 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1, h2, h3, h4 {
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .hero {
+    padding: 40px;
+    text-align: center;
+    background-image: url("hero-image.jpg"); /* Replace with your desired image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+  
+  .hero button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .about, .services {
+    padding: 20px;
+  }
+  
+  footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+  }
+  

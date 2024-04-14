@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Timetable Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.onload = function() {
+
+      document.getElementById('submit').addEventListener('click', function() {
+        createCourseInputs();
+      });
+
+      document.getElementById('secsubmit').addEventListener('click', function() {
+        createTable();
+      });
+    }
+
+    function createCourseInputs() {
+      var hours = parseInt(document.getElementById('hours').value);
+      var days = parseInt(document.getElementById('days').value);
+      var html = "";
+
+      for (var i = 1; i <= hours; i++) {
+        html += "<label for='cn" + i + "'>Course " + i + ":</label>";
+        html += "<input type='text' id='cn" + i + "' placeholder='Course Name' required><br>";
+        html += "<label for='faculty" + i + "'>Faculty " + i + ":</label>";
+        html += "<input type='text' id='faculty" + i + "' placeholder='Faculty Name' required><br>";
+      }
+
+      document.getElementById('ans').innerHTML = html;
+    }
+
+    function createTable() {
+  if (document.getElementById('cn1') === null) {
+    createCourseInputs();
+  }
+      var days = parseInt(document.getElementById('days').value);
+      var hours = parseInt(document.getElementById('hours').value);
+      var tableBody = "";
+
+      for (var i = 1; i <= days; i++) {
+        tableBody += "<tr>";
+        for (var j = 1; j <= hours; j++) {
+          var courseId = 'cn' + (j - 1);  // Adjust index for zero-based array access
+          console.log( document.getElementById(courseId).value);
+          var courseName = document.getElementById(courseId).value;
+          tableBody += "<td><p id='cell-" + i + "-" + j + "'>" + courseName + "</p></td>";
+        }
+        tableBody += "</tr>";
+      }
+
+      document.getElementById('timetable').innerHTML = "<tbody>" + tableBody + "</tbody>";
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>College Timetable Generator</h2>
+    <label for="hours">Enter number of hours per day: </label>
+    <input id="hours" max="8" min="1" type="number">
+    <br>
+    <label for="days">Enter number of days per week:</label>
+    <input id="days" max="7" min="1" type="number">
+    <br>
+    <button type="button" id="submit">Submit</button>
+    <div id="ans"></div>
+    <button type="button" id="secsubmit">Create Timetable</button>
+    <table border="1" id="timetable"></table>
+  </div>
+</body>
+</html>

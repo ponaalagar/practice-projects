@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Travel Agency</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0a192f;
+            color: #e6f1ff;
+            line-height: 1.6;
+        }
+        /* Header styles */
+        header {
+            background-color: #112240;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        /* Navigation menu styles */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        nav a {
+            color: #e6f1ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #64ffda;
+        }
+        /* Main content styles */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        /* Hero section styles */
+        .hero {
+            background-image: url('space.jpg'); /* Replace with your cosmic image */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #e6f1ff;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        /* Booking form styles */
+        form {
+            background-color: rgba(17, 34, 64, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #1f4068;
+            color: #e6f1ff;
+        }
+        button[type="submit"] {
+            background-color: #64ffda;
+            color: #0a192f;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #00b4d8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cosmic Travel Agency</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="booking.html">Booking</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Home Page -->
+        <div class="hero">
+            <h2>Explore the Universe with Us</h2>
+            <p>Welcome to the Cosmic Travel Agency! Discover celestial wonders and embark on cosmic adventures.</p>
+            <a href="booking.html"><button>Start Your Journey</button></a>
+        </div>
+        <!-- Booking Page -->
+        <h2>Book Your Journey</h2>
+        <form action="submit_booking.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <!-- Other form fields (destination, date, etc.) go here -->
+            <button type="submit">Submit Booking</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Timetable Generator</title>
+    <link rel="stylesheet" href="st.css">
+</head>
+<body>
+    <h1>Automatic Timetable Generator</h1>
+    <div id="input-container">
+        <label for="periods">Periods per Day:</label>
+        <input type="number" id="periods" min="1" required>
+        <label for="days">Working Days per Week:</label>
+        <input type="number" id="days" min="1" required>
+        <button onclick="generateTable()">Generate Timetable</button>
+    </div>
+    <div id="subject-inputs"></div>
+    <div id="timetable"></div>
+    <script src="sc.js"></script>
+</body>
+</html>

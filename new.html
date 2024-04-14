@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            document.getElementById('submit').addEventListener('click', time);
+        }
+
+        function time(e) {
+            var h = 0;
+            var d = 0;
+            var arr = []
+            h = parseInt(document.getElementById('hours').value);
+            d = parseInt(document.getElementById('days').value);
+            var i = 0;
+            var html = "";
+            for (i = 0; i < h; i++) {
+                html += "<label>coursename" + i + ":<label/><input id='course" + i + "' >" + "<label>  facultyname" + i + ":<label/><input id='faculty" + i + "' ><br>"
+            }
+            d = parseInt(document.getElementById('days').value);
+            document.getElementById('ans').innerHTML = html + '<br> <button type="submit" id="sub" >confirm</submit> ';
+            document.getElementById('sub').addEventListener('click', function () { table(h, d) });
+            console.log(h * d);
+
+            function table(h, d) {
+                var tb = "";
+                for (i = 1; i <= d; i++) {
+                    tb += "<tr>"
+                    for (j = 1; j <= h; j++) {
+                        tb += "<td><p id='courseData" + i + j + "'></p></td>"
+                    }
+                    tb += "</tr>"
+                }
+                document.getElementById('timetable').innerHTML = tb;
+            }
+
+            for (i = 0; i < h; i++) {
+                var courseInput = document.getElementById("course" + i);
+                var facultyInput = document.getElementById("faculty" + i);
+                var courseData = document.getElementById("courseData" + (i + 1));
+
+                courseInput.addEventListener("input", function () {
+                    courseData.innerHTML = courseInput.value;
+                });
+
+                facultyInput.addEventListener("input", function () {
+                    courseData.innerHTML += " - " + facultyInput.value;
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="hours">Enter number of hours per day: </label><input id="hours" max="8" min="1" type="number">
+    <br>
+    <label for="days">Enter number of days per week:</label><input id="days" max="7" min="1" type="number">
+    <br>
+    <button type="button" id="submit">submit</button>
+    <div id="ans"></div>
+    <table border="2" id="timetable"></table>
+</body>
+</html>
