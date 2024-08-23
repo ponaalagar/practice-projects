@@ -6,17 +6,16 @@ public class Salary {
         float val=d.compute();
         System.out.println("Your net-salary is: "+val);
     }
-    
 }
 class details{
     Scanner sc = new Scanner(System.in);
+    
     String name;
     int age;
     float basepay;
     float HRA;
     float DA;
     float deduction;
-    float netpay;
     void getinfo()
     {
         System.out.println("enter name :");
