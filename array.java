@@ -18,6 +18,6 @@ public class array {
             System.out.println("arr["+(i+1)+"] = "+arr[i]);
         }
         System.out.println("average ="+(sum/10));
-
+        sc.close();
     }
 }
