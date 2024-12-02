@@ -1,11 +1,11 @@
 class ThisTut{
-    void m(ThisTut obj)
+    void m()
     {
         System.out.println("method invoked");
     }
     void p()
     {
-        m(this);
+        m();
     }
     public static void main(String[] args) {
         ThisTut obj = new ThisTut();
